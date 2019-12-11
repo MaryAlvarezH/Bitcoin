@@ -10,11 +10,17 @@
 <body>
   <div id="app" v-bind:style="{background: '#' + color}">
     <coin-detail 
-      v-bind:img="img"
-      v-bind:name="name"
-      v-bind:title="title" 
-      v-bind:price="price"
-      v_bind:change-percent="changePercent">
+       v-bind:coin="btc"
+       v-on:change-color="updateColor">
+       <!-- para poder utilizar el slot con nombres se debe de utilizar el tag template -->
+       <template v-slot:text>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam recusandae cum quasi ut tempora! Exercitationem, deleniti ipsam tempore dolor natus eos iste illum a, deserunt voluptate quos error expedita? Asperiores.</p>
+       </template>
+
+       <template v-slot:link>
+         <a href="#">Link!</a>
+       </template>
+     
     </coin-detail>
   </div>
 
